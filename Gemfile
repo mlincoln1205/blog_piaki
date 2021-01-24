@@ -25,6 +25,7 @@ gem 'turbolinks', '~> 5'
 gem 'simple_form'
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'cloudinary', '~> 1.16.0'
+gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
