@@ -21,9 +21,9 @@
             <%= article.title %>
           <% end %>
         </td>
-        <td><%= article.body.truncate(100, separator: ' ') %> <%= link_to 'More', article %></td>
-        <td><%= link_to 'Edit', edit_article_path(article) %></td>
-        <td><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= article.body.truncate(100, separator: ' ') %> <%= link_to '<i class="fas fa-search-plus"></i>'.html_safe, article %></td>
+        <td><%= link_to '<i class="far fa-edit"></i>'.html_safe, edit_article_path(article) %></td>
+        <td><%= link_to '<i class="far fa-trash-alt"></i>'.html_safe, article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
