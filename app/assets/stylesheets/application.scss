@@ -1,2 +1,8 @@
-@import "bootstrap/scss/bootstrap";
 @import "trix/dist/trix";
+@import "components/index.scss";
+
+// External libraries
+@import "bootstrap/scss/bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
