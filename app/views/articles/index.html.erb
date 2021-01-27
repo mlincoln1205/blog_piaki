@@ -1,11 +1,12 @@
 <p id="notice"><%= notice %></p>
 
-<h1 class="logo-body text-center" style="font-family: 'Notable', sans-serif; font-size: 70px; color: white;">Blog Piaki</h1>
+<h1 class="logo-body text-center m-5" style="font-family: 'Notable', sans-serif; font-size: 70px; color: white;">Blog Piaki</h1>
 
-<table class="table">    
-    <% @articles.each do |article| %>      
-        <div class="card-product">
-          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+<div class="">    
+    <% @articles.each do |article| %> 
+    
+      <div class="card-product ">
+        <%#= cl_image_tag article.photos.first.key, gravity: :face %>
           <div class="card-product-infos">
             <p><%= article.created_at.strftime('%d/%m/%Y') %></p>
             <%= link_to(article) do %>
@@ -15,8 +16,10 @@
             <%= link_to '<i class="far fa-edit"></i>'.html_safe, edit_article_path(article) %>
             <%= link_to '<i class="far fa-trash-alt"></i>'.html_safe, article, method: :delete, data: { confirm: 'Are you sure?' } %>
           </div>
-        </div>
-    <% end %>
-</table>
+      </div>
+    
+      <% end %>
+    </div>     
+<%= link_to 'New Article', new_article_path, class: "btn btn-outline-light" %>
+</div>
 
-<%= link_to 'New Article', new_article_path, class: "btn btn-outline-dark" %>
