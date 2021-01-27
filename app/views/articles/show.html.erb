@@ -1,4 +1,4 @@
-<div class="card" style="background-color: white;">
+<div class="card mt-2 p-3" style="background-color: white;">
   <p id="notice"><%= notice %></p>
 
   <p>
@@ -19,7 +19,9 @@
   <% end %>
   </p>
 
-  <%= link_to '<i class="far fa-edit"></i>'.html_safe, edit_article_path(@article) %> |
+  <p>
+  <%= link_to '<i class="far fa-edit"></i>'.html_safe, edit_article_path(@article) %> 
   <%= link_to '<i class="fas fa-undo"></i>'.html_safe, articles_path %>
+  </p>
 
 </div>
