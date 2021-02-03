@@ -1,25 +1,27 @@
-<p id="notice"><%= notice %></p>
-
-<h1 class="logo-body text-center m-5" style="font-family: 'Notable', sans-serif; font-size: 70px; color: white;">Blog Piaki</h1>
-
-<div class="">    
-    <% @articles.each do |article| %> 
-    
-      <div class="card-product">
-        <%#= cl_image_tag article.photos.first.key, gravity: :face %>
-          <div class="card-product-infos">
-            <p><%= article.created_at.strftime('%d/%m/%Y') %></p>
-            <%= link_to(article) do %>
-              <h2><%= article.title %></h2>
-            <% end %>
-            <p><%= article.body %> <%= link_to '<i class="fas fa-search-plus"></i>'.html_safe, article %></p>
-            <%= link_to '<i class="far fa-edit"></i>'.html_safe, edit_article_path(article) %>
-            <%= link_to '<i class="far fa-trash-alt"></i>'.html_safe, article, method: :delete, data: { confirm: 'Are you sure?' } %>
-          </div>
+<div class="main-container">
+  <%# <div class="logo-home">
+  </div> %>
+  <div class="cards-grid">    
+    <h1 class="logo-body text-center m-5" style="font-family: 'Notable', sans-serif; font-size: 70px; color: white;">Blog Piaki</h1>
+      <% @articles.each do |article| %> 
+        <div class="card-product" style="height: 20vh">
+          <%= cl_image_tag article.photos.first.key, gravity: :face %>
+            <div class="card-product-infos">
+              <p><%= article.created_at.strftime('%d/%m/%Y') %></p>
+              <%= link_to(article) do %>
+                <h2><%= article.title %></h2>
+              <% end %>
+              <p><%= body_text = article.rich_body %></p> <%= link_to '<i class="fas fa-search-plus"></i>'.html_safe, article %></p>
+              <div>
+                <%= link_to '<i class="far fa-edit"></i>'.html_safe, edit_article_path(article) %>
+                <%= link_to '<i class="far fa-trash-alt"></i>'.html_safe, article, method: :delete, data: { confirm: 'Are you sure?' } %>
+              </div>
+            </div>
+        </div>
+        <% end %>
+        <%= link_to 'New Article', new_article_path, class: "btn btn-outline-light" %>
       </div>
-    
-      <% end %>
-    </div>     
-<%= link_to 'New Article', new_article_path, class: "btn btn-outline-light" %>
+  </div>
+  <div class="banners"> BANNERS
+  </div>
 </div>
-
