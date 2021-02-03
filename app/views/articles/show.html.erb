@@ -1,27 +1,26 @@
 <div class="card mt-2 p-3" style="background-color: white;">
   <p id="notice"><%= notice %></p>
-
+  <strong> <%= @article.created_at.strftime("%d/%m/%Y") %> </strong>
+  <p></p>
   <p>
-    <strong>Title:</strong>
-    <%= @article.title %>
-    <strong> <%=" Criado em:  #{@article.created_at.strftime("%d/%m/%Y")} "%> </strong>
+    <strong><%= @article.title %></strong>
   </p>
 
   <p>
-    <strong>Body:</strong>
+    By: 
     <%#= raise %>
-    <%= @article.body %>
+    <%= @article.rich_body %>
   </p>
 
   <p>
-  <% @article.photos.each do |photo| %>
-    <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill, gravity: :face %>
-  <% end %>
+    <% @article.photos.each do |photo| %>
+      <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill, gravity: :face %>
+    <% end %>
   </p>
 
   <p>
-  <%= link_to '<i class="far fa-edit"></i>'.html_safe, edit_article_path(@article) %> 
-  <%= link_to '<i class="fas fa-undo"></i>'.html_safe, articles_path %>
+    <%= link_to '<i class="far fa-edit"></i>'.html_safe, edit_article_path(@article) %> 
+    <%= link_to '<i class="fas fa-undo"></i>'.html_safe, articles_path %>
   </p>
 
 </div>

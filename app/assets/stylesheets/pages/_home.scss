@@ -1,0 +1,16 @@
+.container {
+    display: flex;
+}
+
+.cards-grid {
+    flex-grow: 1;
+    // display: grid;
+    // grid-template-columns: 1fr 1fr;
+    // grid-gap: 16px;
+}
+
+.banners {
+    height: 100vh;
+    position: sticky;
+    top: 0;
+}
