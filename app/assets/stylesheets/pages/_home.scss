@@ -4,13 +4,26 @@
 
 .cards-grid {
     flex-grow: 1;
-    // display: grid;
-    // grid-template-columns: 1fr 1fr;
-    // grid-gap: 16px;
 }
 
 .banners {
-    height: 100vh;
+    border: none;
+    height: 70vh;
     position: sticky;
-    top: 0;
+    top: 22%;
+    width: 37vh;
+    border-radius: 4px;
+    background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url('/assets/Background-banner.jpg');
+    margin-left: 2%;
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+}
+
+.logo-body {
+    margin: 5.5%;
+}
+.card-whether {
+    height: 30vh;
+    background-color: aliceblue;
+    width: 37vh;
+    background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url('/assets/Background-banner.jpg');
 }
