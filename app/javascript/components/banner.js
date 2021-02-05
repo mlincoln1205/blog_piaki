@@ -3,7 +3,8 @@ import Typed from 'typed.js';
 const loadDynamicBannerText = () => {
   new Typed('#banner-typed-text', {
     strings: ["Espaço de liberdade!", 
-        "Minha casa, minhas regras", 
+        "Todos são bem vindos!!! =)",
+        "Até que se prove o contrário...", 
         "Ele não!!!", 
         "Ele nunca!!!", 
         "Ele jamais!!!"

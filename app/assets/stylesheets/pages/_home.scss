@@ -20,10 +20,14 @@
 .banner-weather {
     height: 30vh;
     background-color: aliceblue;
+    color: white;
     position: sticky;
     width: 37vh;
     top: 3%;
     border-radius: 5px;
+    padding: 15px;
+    background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('https://images.unsplash.com/photo-1563990262507-cacdeecb72c9?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+    background-position: top;
 }
 
 .logo-body {
@@ -52,7 +56,7 @@
   }
   
   .banner p {
-    font-size: 20px;
+    font-size: 35px;
     color: white;
     opacity: .7;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
