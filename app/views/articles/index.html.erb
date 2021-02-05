@@ -1,29 +1,47 @@
 <div class="main-container">
-  <%# <div class="logo-home">
-  </div> %>
-  <div class="cards-grid">    
-    <h1 class="logo-body text-center" style="font-family: 'Notable', sans-serif; font-size: 70px; color: #253038;">Blog Piaki</h1>
-      <% @articles.each do |article| %> 
-        <div class="card-product" style="height: 20vh">
-          <%= cl_image_tag article.photos.first.key, gravity: :face %>
-            <div class="card-product-infos">
-              <p><%= article.created_at.strftime('%d/%m/%Y') %></p>
-              <%= link_to(article) do %>
-                <h2><%= article.title %></h2>
-              <% end %>
-              <p><%= body_text = article.rich_body %></p> <%= link_to '<i class="fas fa-search-plus"></i>'.html_safe, article %></p>
-              <div>
-                <%= link_to '<i class="far fa-edit"></i>'.html_safe, edit_article_path(article) %>
-                <%= link_to '<i class="far fa-trash-alt"></i>'.html_safe, article, method: :delete, data: { confirm: 'Are you sure?' } %>
-              </div>
-            </div>
+  <div class="row">
+    <div class="banner" style="background-color: #440D0F;">
+        <div class="col-12">
+          <h1 class="logo-body text-center" style="font-family: 'Notable', sans-serif; font-size: 70px; color: #FFFFF;">Blog Piaki</h1>
         </div>
-        <% end %>
-        <%= link_to 'New Article', new_article_path, class: "btn btn-outline-dark" %>
+      <div class="container" style="justify-content: center;">
+        <p>
+          <span id="banner-typed-text"></span>
+        </p>
       </div>
-  </div>
-  <div class="container">
-    <div class="banners">
     </div>
   </div>
+
+  <div class="row">
+    <div class="col-12 col-lg-8">
+        <div class="cards-grid">    
+          <% @articles.each do |article| %> 
+            <div class="card-product" style="height: 20vh">
+              <%= cl_image_tag article.photos.first.key, gravity: :face %>
+                <div class="card-product-infos">
+                  <p><%= article.created_at.strftime('%d/%m/%Y') %></p>
+                  <%= link_to(article) do %>
+                    <h2 style="color: #440D0F;"><%= article.title %></h2>
+                  <% end %>
+                  <p><%= body_text = article.rich_body %></p> <%= link_to '<i class="fas fa-search-plus"></i>'.html_safe, article %></p>
+                  <div>
+                    <%= link_to '<i class="far fa-edit"></i>'.html_safe, edit_article_path(article) %>
+                    <%= link_to '<i class="far fa-trash-alt"></i>'.html_safe, article, method: :delete, data: { confirm: 'Are you sure?' } %>
+                  </div>
+                </div>
+            </div>
+          <% end %>
+
+        <%= paginate @articles %>
+
+        </div>
+          <%= link_to 'New Article', new_article_path, class: "btn btn-outline-dark mb-3" %>
+    </div>
+    <div class="right-collumn col-12 col-lg-4">
+      <div class="banner-weather"></div>
+      <div class="banners d-flex">
+      </div>
+    </div>
+  </div>
+
 </div>
