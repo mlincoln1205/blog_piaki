@@ -7,9 +7,11 @@ require("channels")
 import 'bootstrap';
 
 import { loadDynamicBannerText } from '../components/banner'
+import { weatherInfosHome } from '../components/weather'
 
 document.addEventListener('turbolinks:load', () => {
     loadDynamicBannerText();
+    weatherInfosHome();
   });
 
 require("trix")
