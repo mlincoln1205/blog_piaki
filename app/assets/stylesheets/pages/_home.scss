@@ -4,14 +4,15 @@
 
 .cards-grid {
     flex-grow: 1;
+    margin-left: -2%;
 }
 
 .banners {
     border: none;
     height: 43vh;
     position: sticky;
-    top: 53%;
-    width: 37vh;
+    margin-top: 5%;
+    width: 35vh;
     border-radius: 5px;
     background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url('/assets/Background-banner.jpg');
     box-shadow: 0 0 15px rgba(0,0,0,0.3);
@@ -22,8 +23,8 @@
     background-color: aliceblue;
     color: white;
     position: sticky;
-    width: 37vh;
-    top: 3%;
+    width: 35vh;
+   
     border-radius: 5px;
     padding: 15px;
     background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('https://images.unsplash.com/photo-1563990262507-cacdeecb72c9?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
