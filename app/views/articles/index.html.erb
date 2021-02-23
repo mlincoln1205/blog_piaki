@@ -23,7 +23,8 @@
                   <%= link_to(article) do %>
                     <h2 style="color: #440D0F;"><%= article.title %></h2>
                   <% end %>
-                  <p><%= body_text = article.rich_body %></p> <%= link_to '<i class="fas fa-search-plus" style="color:#440D0F"></i>'.html_safe, article %></p>
+                  <p class="description-card" > <%= article.description %></p>
+                  <p><%#= body_text = article.rich_body %></p> <%= link_to '<i class="fas fa-search-plus" style="color:#440D0F"></i>'.html_safe, article %></p>
                   <div>
                     <%= link_to '<i class="far fa-edit" style="color:#440D0F"></i>'.html_safe, edit_article_path(article) %>
                     <%= link_to '<i class="far fa-trash-alt" style="color:#440D0F"></i>'.html_safe, article, method: :delete, data: { confirm: 'Are you sure?' } %>
@@ -48,9 +49,9 @@
           <h2 id="temperature"></h2>
       </div>
       <div class="banners d-flex">
-        <div id="">
+        <%# <div class="AdsenseTechsupport">
           TEST AD BLOCK
-        </div>
+        </div> %>
       </div>
     </div>
   </div>
