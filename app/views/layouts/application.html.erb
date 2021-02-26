@@ -19,10 +19,17 @@
   </head>
 
   <body style="background-color: #FFFFFF;">
+    <script>adblockTest=true  </script>
+    <script src="/adverts.js?"></script>
 
     <%= render 'shared/navbar' %>
     <div class="container">
       <%= yield %>
     </div>
+    <script>
+        if (typeof adblockTest == 'undefined') {
+          alert('AdBlock Detected!!');
+        }
+    </script>
   </body>
 </html>
