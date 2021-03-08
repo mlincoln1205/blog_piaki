@@ -1,3 +1,4 @@
+<%# Banner Title and Typescript %>
 <div class="main-container">
   <div class="row">
     <div class="banner" style="background-color: #440D0F;">
@@ -12,6 +13,7 @@
     </div>
   </div>
 
+<%# Cards with post`s links and description %>
   <div class="row">
     <div class="col-sm-12 col-lg-8">
         <div class="cards-grid">    
@@ -23,6 +25,7 @@
                   <%= link_to(article) do %>
                     <h2 style="color: #440D0F;"><%= article.title %></h2>
                   <% end %>
+                  <%# This description is limited to 360 char. to keep it on 4 lines, which creates a pattern %>
                   <p class="description-card" > <%= article.description %></p>
                   <p><%#= body_text = article.rich_body %></p> <%= link_to '<i class="fas fa-search-plus" style="color:#440D0F"></i>'.html_safe, article %></p>
                   <div>
@@ -32,10 +35,12 @@
                 </div>
             </div>
           <% end %>
+        <%# Pagination with Kaminari %>
         <%= paginate @articles %>
           <%= link_to 'New Article', new_article_path, class: "btn btn-outline-dark mb-3" %>
         </div>
     </div>
+    <%# banner wheather and ads %>
     <div class="right-collumn col-sm-12 col-lg-4">
       <div class="banner-weather">
         <form action="/" class="d-flex" id="city-form">
@@ -49,11 +54,13 @@
           <h2 id="temperature"></h2>
       </div>
       <div class="banners d-flex">
-        <div class="AdsenseTechsupport">
-          TEST AD BLOCK
+        <div id="ad-box">
+          
         </div>
       </div>
     </div>
   </div>
 
 </div>
+
+

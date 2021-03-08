@@ -8,13 +8,14 @@ import 'bootstrap';
 
 import { loadDynamicBannerText } from '../components/banner'
 import { weatherInfosHome } from '../components/weather'
-import { adblockTest } from '../components/adverts'
+// import { adblockTest } from '../components/rsads'
+
 
 document.addEventListener('turbolinks:load', () => {
     loadDynamicBannerText();
     weatherInfosHome();
+    // adblockTest();
   });
-  adblockTest();
 
 require("trix")
 require("@rails/actiontext")
