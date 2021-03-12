@@ -26,7 +26,7 @@
                     <h2 style="color: #440D0F;"><%= article.title %></h2>
                   <% end %>
                   <%# This description is limited to 360 char. to keep it on 4 lines, which creates a pattern %>
-                  <p class="description-card" > <%= article.description %></p>
+                  <p class="description-card" > <strong> <%= article.description %> </strong> </p> 
                   <p><%#= body_text = article.rich_body %></p> <%= link_to '<i class="fas fa-search-plus" style="color:#440D0F"></i>'.html_safe, article %></p>
                   <div>
                     <%= link_to '<i class="far fa-edit" style="color:#440D0F"></i>'.html_safe, edit_article_path(article) %>
