@@ -1,7 +1,7 @@
 class ArticlesController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :set_article, only: [:show, :edit, :update, :destroy]
 
-  # GET /articles
   def index
     if params[:query]
       @articles = Article.all.order(created_at: :desc).page(params[:page]).per(5).search_by_title_and_synopsis(params[:query])      
@@ -10,23 +10,19 @@ class ArticlesController < ApplicationController
     end
   end
 
-  # GET /articles/1
   def show
   end
 
-  # GET /articles/new
   def new
     @article = Article.new
   end
 
-  # GET /articles/1/edit
   def edit
   end
 
-  # POST /articles
   def create
     @article = Article.new(article_params)
-
+    @article.user = current_user
     if @article.save
       redirect_to @article, notice: 'Article was successfully created.'
     else
@@ -34,7 +30,6 @@ class ArticlesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /articles/1
   def update
     if @article.update(article_params)
       redirect_to @article, notice: 'Article was successfully updated.'
@@ -43,19 +38,16 @@ class ArticlesController < ApplicationController
     end
   end
 
-  # DELETE /articles/1
   def destroy
     @article.destroy
     redirect_to articles_url, notice: 'Article was successfully destroyed.'
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_article
       @article = Article.find(params[:id])
     end
 
-    # Only allow a trusted parameter "white list" through.
     def article_params
       params.require(:article).permit(:title, :rich_body, :description, photos: [])
     end

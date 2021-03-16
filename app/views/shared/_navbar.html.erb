@@ -10,14 +10,13 @@
         <li class="nav-item active">
           <a class="nav-link text-white" href="/">Home <span class="sr-only">(current)</span></a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link text-white" href="#">Que somos</a>
-        </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Chega mais
           </a>
           <div class="dropdown-menu text-white" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">Que Somos</a>
+            <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="#">Geradores de Conteúdo</a>
             <a class="dropdown-item" href="#">Como Colaborar</a>
             <div class="dropdown-divider"></div>
@@ -38,6 +37,15 @@
       </div>
       <div class="ml-2"> <%= submit_tag "Busca", class: "btn btn-outline-light" %> </div>
       <% end %>
+
+      <div class="login-setup">
+        <% if user_signed_in? %>
+          <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+        <% else %>
+          <%= link_to "Login", new_user_session_path %>
+        <% end %>
+      </div>
+
     </div>
   </div>
 </nav>

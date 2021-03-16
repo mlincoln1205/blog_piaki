@@ -33,6 +33,11 @@ gem 'image_processing', '~> 1.2'
 gem 'kaminari'
 
 gem 'pg_search', '~> 2.3.0'
+
+gem 'devise'
+
+gem 'bootstrap', '~> 5.0.0.beta2'
+gem 'autoprefixer-rails'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
