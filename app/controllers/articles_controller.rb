@@ -4,9 +4,9 @@ class ArticlesController < ApplicationController
 
   def index
     if params[:query]
-      @articles = Article.all.order(created_at: :desc).page(params[:page]).per(5).search_by_title_and_synopsis(params[:query])      
+      @articles = policy_scope(Article).order(created_at: :desc).page(params[:page]).per(5).search_by_title_and_synopsis(params[:query])    
     else
-      @articles = Article.all.order(created_at: :desc).page(params[:page]).per(5)
+      @articles = policy_scope(Article).order(created_at: :desc).page(params[:page]).per(5)
     end
   end
 
@@ -15,14 +15,20 @@ class ArticlesController < ApplicationController
 
   def new
     @article = Article.new
+    authorize @article
   end
 
   def edit
+    unless @article.user == current_user
+    redirect_to articles_path
+    end
   end
 
   def create
     @article = Article.new(article_params)
     @article.user = current_user
+    authorize @article
+    
     if @article.save
       redirect_to @article, notice: 'Article was successfully created.'
     else
@@ -46,6 +52,7 @@ class ArticlesController < ApplicationController
   private
     def set_article
       @article = Article.find(params[:id])
+      authorize @article
     end
 
     def article_params

@@ -7,11 +7,12 @@
   </p>
 
   <p>
-    By: <%= current_user.email %>
+    By: <%= @article.user.first_name %> <%= @article.user.last_name %> 
     <%#= raise %>
     <%= @article.rich_body %>
   </p>
 
+<%# display picture of the card on show, to be decided. %>
   <p>
     <% @article.photos.each do |photo| %>
       <%#= cl_image_tag photo.key, height: 300, width: 400, crop: :fill, gravity: :face %>
@@ -19,7 +20,9 @@
   </p>
 
   <p>
-    <%= link_to '<i class="far fa-edit" style="color:#440D0F"></i>'.html_safe, edit_article_path(@article) %> 
+    <% if policy(@article).edit? %>
+      <%= link_to '<i class="far fa-edit" style="color:#440D0F"></i>'.html_safe, edit_article_path(@article) %> 
+    <% end %>
     <%= link_to '<i class="fas fa-undo" style="color:#440D0F"></i>'.html_safe, articles_path %>
   </p>
 
