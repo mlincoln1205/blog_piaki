@@ -29,15 +29,21 @@
                   <p class="description-card" > <strong> <%= article.description %> </strong> </p> 
                   <p><%#= body_text = article.rich_body %></p> <%= link_to '<i class="fas fa-search-plus" style="color:#440D0F"></i>'.html_safe, article %></p>
                   <div>
+                  <% if policy(article).edit? %>
                     <%= link_to '<i class="far fa-edit" style="color:#440D0F"></i>'.html_safe, edit_article_path(article) %>
+                  <% end %>
+                  <% if policy(article).destroy? %>  
                     <%= link_to '<i class="far fa-trash-alt" style="color:#440D0F"></i>'.html_safe, article, method: :delete, data: { confirm: 'Are you sure?' } %>
+                  <% end %>  
                   </div>
                 </div>
             </div>
           <% end %>
         <%# Pagination with Kaminari %>
         <%= paginate @articles %>
+        <% if policy(Article).new? || current_user.admin? %>
           <%= link_to 'New Article', new_article_path, class: "btn btn-outline-dark mb-3" %>
+        <% end %> 
         </div>
     </div>
     <%# banner wheather and ads %>
@@ -54,7 +60,7 @@
           <h2 id="temperature"></h2>
       </div>
       <div class="banners d-flex">
-        <div id="ad-box">
+        <div id="pub-banner">
           
         </div>
       </div>
