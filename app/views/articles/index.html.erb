@@ -41,9 +41,6 @@
           <% end %>
         <%# Pagination with Kaminari %>
         <%= paginate @articles %>
-        <% if policy(Article).new? || current_user.admin? %>
-          <%= link_to 'New Article', new_article_path, class: "btn btn-outline-dark mb-3" %>
-        <% end %> 
         </div>
     </div>
     <%# banner wheather and ads %>
