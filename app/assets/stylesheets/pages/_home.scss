@@ -15,8 +15,9 @@
     width: 35vh;
     border-radius: 5px;
     background-color: white;
-    /* background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url('/assets/Background-banner.jpg');*/
+    background-image: linear-gradient(rgba(165, 169, 155, 0.635), rgba(137, 136, 145, 24.5)), url('/assets/mask.jpg');
     box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    background-size: 100% 100%;
 }
 
 .banner-weather {
@@ -64,6 +65,12 @@
     text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   }
   
+  #banner-down-text h4 {
+    color: rgb(255, 255, 255);
+    margin-top: 20px;
+  }
+
+
   /*typed setup*/
 
   #banner-typed-text {
