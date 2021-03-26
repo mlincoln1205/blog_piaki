@@ -1,5 +1,3 @@
-const url = 'https://api.openweathermap.org/data/2.5/weather?q=valencia&appid=9536fc53c2a90abbe6f5d346c56aee19&units=metric';
-
 const city = document.getElementById('city-name');
 const date = document.querySelector('#date');
 const description = document.getElementById('description');
@@ -8,7 +6,7 @@ const icon = document.getElementById('icon');
 const form = document.getElementById('city-form');
 const input = document.getElementById('city-input');
 
-const weatherInfosHome = (cityName = 'Brokdorf') => {
+const weatherInfosHome = (cityName = 'Sao Paulo') => {
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=9536fc53c2a90abbe6f5d346c56aee19&units=metric`)
     .then(response => response.json())
     .then(data => {
@@ -22,12 +20,14 @@ const weatherInfosHome = (cityName = 'Brokdorf') => {
         description.innerText = data.weather[0].description;
         temperature.innerText = `${Math.round(data.main.temp)} °C`;
         icon.src = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
-        })
-    }
+        });
+    };
     
+   
     form.addEventListener('submit', event => {
         event.preventDefault();
         weatherInfosHome(input.value);
-})
+    });
+
 
 export { weatherInfosHome };

@@ -13,6 +13,6 @@ import { weatherInfosHome } from '../components/weather'
 
 
 document.addEventListener('turbolinks:load', () => {
-    loadDynamicBannerText();
-    weatherInfosHome();
+  loadDynamicBannerText();
+  weatherInfosHome();
   });

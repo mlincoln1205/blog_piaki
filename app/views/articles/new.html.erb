@@ -1,9 +1,10 @@
 
-<div>
-    <h1>New Article</h1>
+<div class="w-100 d-flex">
+    <div class="w-100">
+        <h1>Novo Artigo</h1>
 
-    <%= render 'form', article: @article %>
+        <%= render 'form', article: @article %>
 
-    <%= link_to 'Back', articles_path %>
-
+        <%= link_to '<i class="fas fa-undo" style="color:#440D0F"></i>'.html_safe, articles_path %>
+    </div>
 </div>
