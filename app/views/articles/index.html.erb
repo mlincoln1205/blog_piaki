@@ -1,3 +1,6 @@
+
+<% content_for :head do %>
+  <meta name="turbolinks-cache-control" content="no-cache">
 <%# Banner Title and Typescript %>
 <div class="main-container">
   <div class="row">
@@ -45,6 +48,7 @@
     </div>
     <%# banner wheather and ads %>
     <div class="right-collumn col-sm-12 col-lg-4">
+    
       <div class="banner-weather">
         <form action="/" class="d-flex" id="city-form">
           <input class="form-control mr-sm-2 mb-1" type="text" id="city-input" placeholder="Busque uma cidade">
@@ -56,6 +60,9 @@
           <img src="" alt="" id="icon" height="50px" width="50px" />
           <h2 id="temperature"></h2>
       </div>
+      
+    
+      
       <div class="banners d-flex align-items-center">
         <div id="banner-down-text" class="text-white text-center p-3">
           <h3>COVID-19</h3>
@@ -72,4 +79,5 @@
 
 </div>
 
+<% end %>
 
