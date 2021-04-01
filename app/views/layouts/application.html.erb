@@ -6,9 +6,9 @@
     <%= csp_meta_tag %>
     <%= favicon_link_tag asset_path('wing.png') %>
     <% if content_for?(:head) %>
-    <div class="container">
-      <%= yield(:head) %>
-    </div>
+      <div class="container">
+        <%= yield(:head) %>
+      </div>
     <% end %>
 
     <%# <link rel="stylesheet" href="path/to/bootstrap/css/bootstrap.min.css">
