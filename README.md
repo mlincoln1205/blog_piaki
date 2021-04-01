@@ -1,4 +1,4 @@
-# README
+# Blog Piaki
 
 * Ruby version 6.0
 
