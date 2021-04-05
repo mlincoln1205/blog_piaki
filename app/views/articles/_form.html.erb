@@ -1,3 +1,7 @@
+<% content_for :head do %>
+  <meta name="turbolinks-cache-control" content="no-cache">
+<% end %>
+
 <div class="card p-3 w-100 d-flex">
 
   <%= simple_form_for(@article) do |f| %>
@@ -7,7 +11,7 @@
     <div class="form-inputs">
       <%= f.input :title, label: 'Título' %>
       <%= f.input :description, label: 'Descrição'%>
-      <%= f.rich_text_area :rich_body, label: 'Texto'%>
+      <%= f.rich_text_area :rich_body, placeholder: 'Insira o corpo do artigo aqui.'%>
       <%= f.input :photos, label: 'Anexar imagem card home', as: :file, input_html: { multiple: true }  %>
     </div>
 
